@@ -1,0 +1,88 @@
+body {
+	background-color: #101010;
+	color: #e0e0e0;
+	cursor:default;
+	user-select:none;
+}
+
+#container {
+	display: flex;
+	justify-content: space-around;
+}
+
+#AL, #NL {
+	display: flex;
+	width: 45%;
+	margin: 50px auto 50px auto;
+	justify-content: space-around;
+}
+
+.teamlogo {
+	position: relative;
+	width: 13vw;
+	margin: .5vw;
+	&:hover .score {
+		display: block;
+	}
+	&:hover img {
+		opacity: 0.2;
+	}
+	img {
+		transition: opacity .1s;
+		border-radius: 1vw;
+		width: 100%;
+	}
+
+	p {
+		transition: display .1s;
+		display: none;
+		font-size: 2.2vw;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+
+}
+
+p {
+	text-align:center;
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 1.82vw;
+	max-width: 13vw;
+}
+
+#github, #github:visited {
+  position: fixed;
+  bottom: 2px;
+  left: 2px;
+  margin: 0;
+  font-size: 12px;
+  color: #e0e0e0;
+}
+
+@media all and (max-width: 1000px) {
+	#container {
+		flex-direction: column;
+	}
+
+	.teamlogo {
+		width: 26vw;
+	}
+
+	p {
+		max-width: 26vw;
+		font-size: 3.64vw;
+	}
+
+	.score {
+		font-size: 4.5vw;
+	}
+
+	footer img {
+		height: 2vh;
+		margin: 0 0 1vh 5vw;
+	}
+}
