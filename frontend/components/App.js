@@ -11,7 +11,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-		const socket = io('/', {path: '/mlbstandings/socket.io'});
+    // specify path if running on a server
+		// const socket = io('/', {path: '/mlbstandings/socket.io'});
+
+    // no arguments if running locally
+		const socket = io();
+
     socket.on("FromAPI", data => {
       this.setState({ standings: data});
     });
